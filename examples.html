@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaTeX Tutorial</title>
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+/* CSS for the sidebar */
+.sidebar {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #211f1f;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidebar a{
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  font-size: 16px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* CSS for dropdown */
+.dropdown-content {
+  display: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+.sidebar .toc {
+  font-size: 4px; /* Adjust the font size as needed */
+}
+
+.code-snippet-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+}
+
+.buttons {
+  display: flex; /* Use flexbox */
+  margin-top: 10px;
+}
+
+.buttons button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buttons button:last-child {
+  margin-right: 0; /* Remove right margin for the last button */
+}
+
+.buttons button:hover {
+  background-color: #0056b3;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+  .sidebar ul li {font-size: 20px;}
+}
+</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <a href="index.html">Tutorial to LaTeX</a>
+    <a href="introduction.html">Introduction</a>
+    <a href="examples.html">Some examples to get started</a>
+    <ul class="toc-sections">
+      <li class="toc"><a href="#how-to-add-comments"> How to add Comments</a></li>
+      <li class="toc"><a href="#how-to-include-figures"> How to include Figures</a></li>
+      <li class="toc"><a href="#how-to-add-tables"> How to add Tables</a></li>
+      <li class="toc"><a href="#how-to-write-Mathematics"> How to write Mathematics</a></li>
+      <li class="toc"><a href="#how-to-create-sections-and-subsections"> How to create Sections and Subsections</a></li>
+      <li class="toc"><a href="#how-to-add-lists"> How to add Lists</a></li>
+    </ul>
+    
+    <a href="references.html">References</a>
+</div>
+
+<!-- Main content area -->
+<div class="main">
+  <h1 id="some-examples-to-get-started">Some examples to get started</h1>
+  <div id="how-to-add-comments"> 
+<!--l. 25--><p class="noindent" >
+  <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
+    id="x1-30002.1"></a>How to add Comments</h4>
+          Comments can be added to your project by clicking on the comment icon in the
+          toolbar above. To reply to a comment, simply click the reply button in the
+          lower right corner of the comment, and you can close them when you&#8217;re
+          done.
+    </div>
+      <div id="how-to-include-figures"> 
+        <h4 class="subsectionHead">
+          <span class="titlemark">2.2</span> 
+          How to include Figures
+        </h4>
+        <p class="noindent" >
+          First you have to upload the image file from your computer using the upload link the
+        project menu. Then use the includegraphics command to include it in your
+        document. Use the figure environment and the caption command to add a number
+        and a caption to your figure. See the code for Figure 
+        <a href="#x1-40011">1<!--tex4ht:ref: fig:frog --></a> in this section for an
+        example.
+        <hr class="figure">
+        <div class="figure">                                                                 
+        <a id="x1-40011"></a>
+        <img src="img/frog.jpg" alt="PIC"  width="103" height="103" >
+        <br/> 
+        <div class="caption" ><span class="id">Figure&#x00A0;1: </span>
+          <span class="content">This frog was uploaded via the project menu.</span>
+        </div>
+        </div>
+        <hr class="endfigure">
+      </div>
+      <div id="how-to-add-tables"> 
+        <h4 class="subsectionHead"><span class="titlemark">2.3</span> <a id="x1-50002.3"></a>How to add Tables</h4>
+         <p class="noindent" >Use the table and tabular commands for basic tables &#8212; see Table&#x00A0;<a 
+         href="#x1-50011">1</a>, for
+         example.
+            <div class="table">
+                                                                           
+         
+                                                                           
+         <!--l. 48--><p class="indent" >   <a 
+          id="x1-50011"></a><hr class="float"><div class="float" 
+         >
+                                                                           
+         
+                                                                           
+         <div class="tabular"> <table id="TBL-2" class="tabular" 
+          
+         ><colgroup id="TBL-2-1g"><col 
+         id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+         id="TBL-2-2"></colgroup><tr  
+          style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+         class="td11">Item    </td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-2"  
+         class="td11">Quantity</td>
+         </tr><tr 
+         class="hline"><td><hr></td><td><hr></td></tr><tr  
+          style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+         class="td11">Widgets</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-2"  
+         class="td11">      42</td>
+         </tr><tr  
+          style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+         class="td11">Gadgets</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-2"  
+         class="td11">      13</td></tr></table>                                               </div>
+         <br /> <div class="caption" 
+         ><span class="id">Table&#x00A0;1: </span><span  
+         class="content">An example table.</span></div><!--tex4ht:label?: x1-50011 -->
+                                                                           
+         
+                                                                           
+            </div><hr class="endfloat" />
+            </div>
+      </div>
+      <div id="how-to-write-Mathematics">
+        <h4 class="subsectionHead"><span class="titlemark">2.4   </span> <a 
+          id="x1-60002.4"></a>How to write Mathematics</h4>
+          <p>LaTeX is great at typesetting mathematics. Let <span
+            class="math inline">\(X_1, X_2, \ldots, X_n\)</span> be a sequence of
+            independent and identically distributed random variables with <span
+            class="math inline">\(\text{E}[X_i] = \mu\)</span> and <span
+            class="math inline">\(\text{Var}[X_i] = \sigma^2 &lt; \infty\)</span>,
+            and let <span class="math display">\[S_n = \frac{X_1 + X_2 + \cdots +
+            X_n}{n}
+                  = \frac{1}{n}\sum_{i}^{n} X_i\]</span> denote their mean. Then as
+            <span class="math inline">\(n\)</span> approaches infinity, the random
+            variables <span class="math inline">\(\sqrt{n}(S_n - \mu)\)</span>
+            converge in distribution to a normal <span
+            class="math inline">\(\mathcal{N}(0, \sigma^2)\)</span>.</p>
+          <h4> Code Snippet </h4>
+          <div class="code-snippet-container">
+
+
+                <pre class="code-snippet">
+                  <code class="language-python">
+      x = [1, 2, 4, 5, 6, 9, 10, 15, 20]
+      sum = 0
+      for i in range(len(x)):
+        sum += x[i]
+      mean = sum / len(x)
+                </code>
+                </pre>
+
+            <div class="buttons">
+              <button onclick="window.open('https://colab.research.google.com/drive/1gSCC65sLaImCZu6kJRiWLMR8Yq02zU6S#scrollTo=QXCHC9uQwadM','_blank')">Open in Colab</button>
+              <button onclick="explainCode()">Explain code</button>
+            </div>
+            <div id="contentDisplay"></div>
+          </div>
+          <h4> Google Colab Embedded </h4>
+          <script src="https://gist.github.com/arunim-samudra-tamu/51a781e85448cd77be011d65b9c2aabf.js"></script>
+      </div>
+      <div id="how-to-create-sections-and-subsections">
+          <h4 class="subsectionHead"><span class="titlemark">2.5   </span> <a 
+            id="x1-70002.5"></a>How to create Sections and Subsections</h4>
+           <!--l. 67--><p class="noindent" >Use section and subsections to organize your document. Simply use the section and
+           subsection buttons in the toolbar to create them, and we&#8217;ll handle all the formatting
+           and numbering automatically.
+           <!--l. 69--><p class="noindent" >
+      </div>
+      <div id="how-to-add-lists">
+        <h4 class="subsectionHead"><span class="titlemark">2.6   </span> <a 
+          id="x1-80002.6"></a>How to add Lists</h4>
+         <!--l. 71--><p class="noindent" >You can make lists with automatic numbering &#x2026;
+         <!--l. 73--><p class="indent" >
+              <ol  class="enumerate1" >
+         <li 
+           class="enumerate" id="x1-8002x1">
+              <!--l. 74--><p class="noindent" >Like this,
+              </li>
+         <li 
+           class="enumerate" id="x1-8004x2">
+              <!--l. 75--><p class="noindent" >and like this.</li></ol>
+         
+         <!--l. 77--><p class="noindent" >&#x2026;or bullet points &#x2026;
+                                                                           
+         
+                                                                           
+              <ul class="itemize1">
+              <li class="itemize">
+              <!--l. 79--><p class="noindent" >Like this,
+              </li>
+              <li class="itemize">
+              <!--l. 80--><p class="noindent" >and like this.</li></ul>
+      </div>
+</div>
+
+</body>
+</html>
