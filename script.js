@@ -18,7 +18,7 @@ function getChatGPTResponse(text) {
         method: 'POST', 
         headers: {
         'Content-Type': 'application/json', 
-        'Authorization': 'Bearer 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'
+        'Authorization': 'Bearer ${YOUR-API-KEY}'
         },
         body: JSON.stringify(requestData), // Convert parameters to JSON string if required
     })
