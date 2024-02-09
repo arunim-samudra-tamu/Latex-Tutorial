@@ -2,7 +2,7 @@ const http = require("http");
 const fs = require("fs");
 
 const server = http.createServer((req, res) => {
-  fs.readFile("home.html", (err, data) => {
+  fs.readFile("index.html", (err, data) => {
     if (err) {
       res.writeHead(500);
       res.end("Internal Server Error");
